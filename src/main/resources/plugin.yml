@@ -1,0 +1,22 @@
+name: DeathLog
+version: ${project.version}
+main: com.tristanphan.DeathLog
+api-version: 1.13
+
+commands:
+  ds:
+    description: Marks your location, health, and timestamp in the logs.
+    permission: deathlog.access
+
+permissions:
+  deathlog.*:
+    description: Gives access to all DeathLog commands
+    children:
+      deathlog.access: true
+      deathlog.all: true
+  deathlog.access:
+    default: true
+    description: Allows you to see your own info
+  deathlog.all:
+    default: false
+    description: Allows you to see everyone's
